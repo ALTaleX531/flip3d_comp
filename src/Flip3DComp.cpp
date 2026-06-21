@@ -64,6 +64,9 @@ bool Flip3DCompApp::Initialize(HINSTANCE hInstance)
     EnterFlip3DWindowMode();
     InitAccessibility();
 
+    // First-frame layout + DComp commit before ShowWindow (avoids blank flash).
+    Update(0.0f);
+
     return true;
 }
 
